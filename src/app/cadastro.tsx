@@ -7,8 +7,8 @@ import {
   StyleSheet,
   Alert,
 } from "react-native";
-import { MaterialIcons, Feather } from "@expo/vector-icons";
-import { Link, router } from "expo-router";
+import { Feather } from "@expo/vector-icons";
+import { router } from "expo-router";
 
 export default function Cadastro() {
   const [nome, setNome] = useState("");
@@ -36,13 +36,13 @@ export default function Cadastro() {
 
     Alert.alert("Sucesso", `Usuário ${nome} cadastrado com sucesso!`);
 
-    router.push("/");
+    router.push("/login");
   };
 
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.item} onPress={() => router.push("/")}>
-        <MaterialIcons name="arrow-back" size={45} color="#0E1D50" />
+        <Feather name="arrow-left" size={24} color="#0E1D50" />
       </TouchableOpacity>
 
       <Text style={styles.titulo}>Criar Conta</Text>
@@ -99,8 +99,8 @@ export default function Cadastro() {
         </TouchableOpacity>
       </View>
 
-      <TouchableOpacity style={styles.botao}>
-      <Link href={"/login"}> {" "}<Text style={styles.textoBotao}>Cadastrar</Text></Link>
+      <TouchableOpacity style={styles.botao} onPress={handleCadastro}>
+        <Text style={styles.textoBotao}>Cadastrar</Text>
       </TouchableOpacity>
     </View>
   );
@@ -108,16 +108,16 @@ export default function Cadastro() {
 
 const styles = StyleSheet.create({
   container: {
-    flex:1,
-    backgroundColor: "#6B83A2",
+    flex: 1,
+    backgroundColor: "#D9D9D9",
     alignItems: "center",
     justifyContent: "center",
-    padding: 10,
+    padding: 20,
   },
   titulo: {
     fontSize: 28,
-    padding: 30  ,
     fontWeight: "bold",
+    marginBottom: 30,
     color: "#0E1D50",
   },
   input: {

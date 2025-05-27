@@ -7,9 +7,8 @@ import {
   StyleSheet,
   Alert,
 } from "react-native";
-
-import { Link, router } from "expo-router";
-import { MaterialIcons, Feather } from "@expo/vector-icons";
+import { Feather } from "@expo/vector-icons";
+import { router } from "expo-router";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -35,7 +34,7 @@ export default function Login() {
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.item} onPress={() => router.push("/")}>
-        <MaterialIcons name="arrow-back" size={45} color="#0E1D50" />
+        <Feather name="arrow-left" size={24} color="#0E1D50" />
       </TouchableOpacity>
 
       <Text style={styles.titulo}>Login</Text>
@@ -86,7 +85,7 @@ export default function Login() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#6B83A2",
+    backgroundColor: "#D9D9D9",
     alignItems: "center",
     justifyContent: "center",
     padding: 20,
