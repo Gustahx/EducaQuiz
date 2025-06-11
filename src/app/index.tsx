@@ -11,6 +11,12 @@ import {
 import { router } from "expo-router";
 import { Button } from "@/components/button";
 import { Input } from "@/components/input";
+/* Test Quiz 
+import { useEffect } from "react";
+
+useEffect(() => {
+  router.replace("/quiz");
+}, []); */ 
 
 export default function Index() {
   function handleMessage() {
