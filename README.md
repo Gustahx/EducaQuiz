@@ -1,50 +1,55 @@
-# Welcome to your Expo app 👋
+📚 EducaQuiz
+EducaQuiz is a high-fidelity educational app prototype designed for content review and practical skill development, optimized for offline use and low-end mobile devices. Built using React Native
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+🚀 Technologies
+This project is built with the following technologies:
 
-## Get started
+React Native - Cross-platform mobile development
+TypeScript (TSX) & JavaScript
+MongoDB or PostgreSQL - For data storage (to be defined)
+Node.js + Express (optional backend if needed)
+Expo - For eaiser development and testing (if used)
+📂 Project Structure
+EducaQuiz/
+├── assets/
+├── src/
+│ ├── app/
+│ └── components/
+│ ├── button/
+│ └── input/
+├── .gitignore
+├── app.json
+├── package.json
+├── package-lock.json
+└── tsconfig.json
+└── Readme.md
+└── LICENSE
+📱 Features
+📚 Home screen displaying subjects and organized subtopics for easy navigation
+📋 User registration and login
+🧠 Take quizzes on different subjects
+🕹️ Interactive and responsive UI
+💾 Save user progress and results offiline
+🔐 Secure user authentication (if used)
+🛠️ Getting Started
+Prerequisites
+Node.js and npm
+Expo CLI (if using Expo)
+A device or emulator for testing
+installation
+# Clone the repository 
+git clone https://github.com/Gustahx/EducaQuiz.git
 
-1. Install dependencies
+# Navigate into the project folder
+cd EducaQuiz
 
-   ```bash
-   npm install
-   ```
+# Install dependencies 
+npm install 
 
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+# Start the deveolpment server
+npx expo start (if needed) or npx react-native run-android or npx react-native run-ios
+🤝 Contributors
+Gustavo - Developer
+Eduardo - Developer
+📝 License
+This project is licensed under the MIT License - see the LICENSE file for details.
