@@ -11,14 +11,14 @@ import {
 import { router } from "expo-router";
 import { Button } from "@/components/button";
 import { Input } from "@/components/input";
-/* Test Quiz 
+//  Test Quiz 
 import { useEffect } from "react";
 
 useEffect(() => {
   router.replace("/quiz");
-}, []); */ 
+}, []); 
 
-export default function Index() {
+/* export default function Index() {
   function handleMessage() {
     router.push("/cadastro");
   }
@@ -98,4 +98,4 @@ const styles = StyleSheet.create({
     color: "red",
     textDecorationLine: "none",
   },
-});
+}); */
