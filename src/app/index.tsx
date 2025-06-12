@@ -14,11 +14,11 @@ import { Input } from "@/components/input";
 //  Test Quiz 
 import { useEffect } from "react";
 
-useEffect(() => {
+/* useEffect(() => {
   router.replace("/quiz");
-}, []); 
+}, []); */
 
-/* export default function Index() {
+export default function Index() {
   function handleMessage() {
     router.push("/cadastro");
   }
@@ -98,4 +98,4 @@ const styles = StyleSheet.create({
     color: "red",
     textDecorationLine: "none",
   },
-}); */
+}); 
