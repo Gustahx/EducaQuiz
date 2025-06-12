@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import { router } from "expo-router";
+import { showAlert } from "../utils/showAlert"
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -17,16 +18,16 @@ export default function Login() {
 
   const handleLogin = () => {
     if (!email || !senha) {
-      Alert.alert("Erro", "Preencha todos os campos.");
+      showAlert("Erro", "Preencha todos os campos.");
       return;
     }
 
     if (senha.length < 12 || senha.length > 16) {
-      Alert.alert("Erro", "A senha deve ter entre 12 e 16 caracteres.");
+      showAlert("Erro", "A senha deve ter entre 12 e 16 caracteres.");
       return;
     }
 
-    Alert.alert("Sucesso", `Login feito com Sucesso!`);
+    showAlert("Sucesso", `Login feito com Sucesso!`);
 
     router.push("/home");
   };

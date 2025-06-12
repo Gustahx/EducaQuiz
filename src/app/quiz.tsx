@@ -7,6 +7,7 @@ import {
     ScrollView,
     Alert
 } from "react-native";
+import { showAlert } from '../utils/showAlert';
 
 export default function QuizScreen() {
     const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -18,24 +19,38 @@ export default function QuizScreen() {
     const questions = [
         {
             id: 1,
-            text: "Inscrito na estética romântica da literatura brasileira, o conto descreve aspectos da realidade nacional no século XIX ao:",
+            text: `Mas, afinal: o corretor ortográfico ajuda ou atrapalha?
+
+ 
+
+    Quem nunca passou por aquela situação constrangedora proporcionada pelo corretor ortográfico que atire a primeira pedra. Essa ferramenta, que, na teoria, deveria nos ajudar a escrever perfeitamente e com mais facilidade, tem potencial para ser mais uma inimiga do que uma aliada.
+
+    Um especialista em inovação e tecnologia afirma que essa ferramenta pode ser criada de várias maneiras. “Temos o trabalho humano, com pessoas checando os detalhes. E de outro lado existe a alimentação do corretor por dicionários, que, em tese, têm as palavras escritas corretamente”. Mas, afinal: será que o corretor mais ajuda ou mais atrapalha na escrita?
+
+    De acordo com uma professora de um curso de Letras, depende primeiramente da concepção de escrita. “Se consideramos apenas a gramática e a ortografia, há ferramentas de revisão que auxiliam em aspectos ortográficos e até sintáticos. Mas essas ferramentas não garantem a coesão e a coerência, ou seja, as articulações e o sentido do texto. O acesso amplo à informação pode auxiliar na construção de repertório para a escrita, mas também é necessário ter contato com diferentes gêneros textuais e contar com o aprendizado de aspectos formais relacionados à escrita”, explica a professora.
+
+Disponível em: https://canaltech.com.br. Acesso em: 5 fev. 2024 (adaptado).
+
+ 
+
+De acordo com esse texto, o uso do corretor ortográfico`,
             options: [
-                "a) Revelar a imposição de crenças religiosas a pessoas escravizadas.",
-                "b) Apontar a hipocrisia do discurso conservador na defesa da escravidão.",
-                "c) sugerir práticas de violência física e moral em nome do progresso matematico",
-                "d) relacionar o declínio da produção agrícola e comercial a questões raciais.",
-                "e) ironizar o comportamento dos proprietários de terra na exploração do trabalho."
+                "a) ajusta a grafia com uma programação abastecida por dicionários.",
+                "b) alinha a redação do texto às circunstâncias de interação verbal.",
+                "c) atua no aprendizado da estruturação de gêneros textuais.",
+                "d) amplia o repertório vocabular da língua portuguesa.",
+                "e) colabora na construção dos sentidos do texto."
             ],
-            correctAnswer: 1,
-            exam_type: "Enem 2022",
-            subject: "A escrava"
+            correctAnswer: 0,
+            exam_type: "UEA-Específico humanas 2025",
+            subject: "Leitura e interpretação de textos"
         },
         {
             id: 2,
             text: "Qual das alternativas apresenta uma característica do Realismo na literatura brasileira?",
             options: [
-                "b) Análise psicológica profunda dos personagens.",
                 "a) Idealização da natureza e dos sentimentos.",
+                "b) Análise psicológica profunda dos personagens.",
                 "c) Exaltação do nacionalismo e patriotismo.",
                 "d) Fuga da realidade através do sonho.",
                 "e) Valorização do medievalismo europeu."
@@ -66,7 +81,7 @@ export default function QuizScreen() {
 
     const handleNext = () => {
         if (selectedOption == null) {
-            Alert.alert("Atenção","Por favor, selecione uma resposta antes de continuar.")
+            showAlert("Atenção","Por favor, selecione uma resposta antes de continuar.")
             return;
         }
 

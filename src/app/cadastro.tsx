@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import { router } from "expo-router";
+import { showAlert } from '../utils/showAlert';
 
 export default function Cadastro() {
   const [nome, setNome] = useState("");
@@ -20,21 +21,21 @@ export default function Cadastro() {
 
   const handleCadastro = () => {
     if (!nome || !email || !senha || !confirmarSenha) {
-      Alert.alert("Erro", "Preencha todos os campos.");
+      showAlert("Erro", "Preencha todos os campos.");
       return;
     }
 
     if (senha.length < 12 || senha.length > 16) {
-      Alert.alert("Erro", "A senha deve ter entre 12 e 16 caracteres.");
+      showAlert("Erro", "A senha deve ter entre 12 e 16 caracteres.");
       return;
     }
     
     if (senha !== confirmarSenha) {
-      Alert.alert("Erro", "As senhas não coincidem.");
+      showAlert("Erro", "As senhas não coincidem.");
       return;
     }
 
-    Alert.alert("Sucesso", `Usuário ${nome} cadastrado com sucesso!`);
+    showAlert("Sucesso", `Usuário ${nome} cadastrado com sucesso!`);
 
     router.push("/login");
   };
