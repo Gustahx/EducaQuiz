@@ -8,6 +8,7 @@ import {
     Alert
 } from "react-native";
 import { showAlert } from '../utils/showAlert';
+import { router } from "expo-router";
 
 export default function QuizScreen() {
     const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -176,7 +177,7 @@ De acordo com esse texto, o uso do corretor ortográfico`,
                     </View>
                     <Text style={styles.logo}>EducaQuiz</Text>
                 </View>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => router.push("/home")}>
                     <Text style={styles.homeIcon}>🏠</Text>
                 </TouchableOpacity>
             </View>

@@ -7,6 +7,7 @@ import {
   Image,
 } from "react-native";
 import { Ionicons, FontAwesome5, Entypo, MaterialCommunityIcons, Feather } from "@expo/vector-icons";
+import { router } from "expo-router";
 
 export default function HomeScreen() {
   return (
@@ -38,7 +39,10 @@ export default function HomeScreen() {
           <Text style={styles.materiaTexto}>Ciências</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={[styles.materiaBox, { backgroundColor: "#A9D7D9" }]}>
+        <TouchableOpacity 
+        style={[styles.materiaBox, { backgroundColor: "#A9D7D9" }]}
+        onPress={() => router.push("/quiz")}
+        >
           <FontAwesome5 name="flag" size={32} color="black" />
           <Text style={styles.materiaTexto}>Português</Text>
         </TouchableOpacity>
