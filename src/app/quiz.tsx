@@ -16,6 +16,7 @@ export default function QuizScreen() {
   const [answers, setAnswers] = useState([]);
   const [showResult, setShowResult] = useState(false);
   const [score, setScore] = useState(0);
+  const [showCommentary, setShowCommentary] = useState(false);
 
   const questions = [
     {
@@ -45,6 +46,18 @@ De acordo com esse texto, o uso do corretor ortográfico`,
       correctAnswer: 0,
       exam_type: "UEA-Específico humanas 2025",
       subject: "Leitura e interpretação de textos",
+      level: "médio",
+      textType: "reportagem",
+      genre: "jornalístico",
+      tags: [
+        "UEA-Específico humanas 2025",
+        "Leitura e interpretação de textos",
+        "Tecnologia e linguagem",
+        "Ortografia",
+        "Corretor automático"
+      ],
+      commentedResolution: "A alternativa correta é a letra A porque o texto afirma que o corretor ortográfico é abastecido por dicionários e funciona a partir disso para sugerir ou corrigir palavras. As demais alternativas extrapolam ou distorcem o conteúdo do texto, que foca nas limitações e funcionamento técnico do corretor, e não em suas capacidades de gerar sentido, repertório ou domínio de gêneros."
+,
     },
     {
       id: 2,
@@ -57,22 +70,38 @@ De acordo com esse texto, o uso do corretor ortográfico`,
         "e) Valorização do medievalismo europeu.",
       ],
       correctAnswer: 1,
-      exam_type: "Simulado",
+      exam_type: "Enem",
       subject: "Literatura",
+      level: "médio",
+      textType: "questão objetiva",
+      genre: "literario",
+      tags: [
+        "ENEM",
+        "Literatura",
+        "Realismo",
+        "Movimentos literários",
+        "Escolas literárias"
+      ],
+      commentedResolution: "A alternativa correta é a letra B, pois uma das principais características do Realismo é justamente a análise psicológica detalhada das personagens, com foco em suas motivações e conflitos internos. As demais alternativas se referem a outras escolas literárias: a idealização pertence ao Romantismo (a), o nacionalismo também (c), a fuga da realidade está ligada ao Simbolismo (d), e o medievalismo ao Romantismo ou Ultra-Romantismo (e).",
     },
     {
       id: 3,
-      text: "A respeito do Barroco brasileiro, é correto afirmar:",
+      text: "Feijoada à minha moda\nAmiga Helena Sangirardi\nConforme um dia prometi\nOnde, confesso que esqueci\nE embora — perdoe — tão tarde\n(Melhor do que nunca!) este poeta\nSegundo manda a boa ética\nEnvia-lhe a receita (poética)\nDe sua feijoada completa.\nEm atenção ao adiantado\nDa hora em que abrimos o olho\nO feijão deve, já catado\nNos esperar, feliz de molho.\nUma vez cozido o feijão\n(Umas quatro horas, fogo médio)\nNós, bocejando o nosso tédio\nNos chegaremos ao fogão\n[...] De carne-seca suculenta\nGordos pedaços, não dê toucinho\n(Nunca orelhas de bacorinho\nQue a tornam em excesso opulenta!)\n[...]\nEnquanto ao lado, em fogo brando\nDesminguindo-se de gozo\nDeve também se estar fritando\nO torresminho delicioso\nEm cuja gordura, de resto\n(Melhor gordura nunca houve!)\nDeve depois frigir a couve\nPicada, em fogo alegre e presto.\n[...]\nDever cumprido. Nunca é vã\nA palavra de um poeta... — jamais!\nAbraça-a, em Brillat-Savarin,\nOs seus Vinicius de Moraes.\n\nMORAES, V. In: CÍCERO, A.; QUEIROZ, E. (Org.). Vinicius de Moraes: nova antologia poética. São Paulo: Cia. das Letras, 2005 (fragmento).\nApesar de haver marcas formais de carta e receita, a característica que define esse texto como poema é(o",
       options: [
-        "a) Teve como principal característica o equilíbrio e a harmonia.",
-        "b) Manifestou-se principalmente através da contradição e do conflito.",
-        "c) Priorizou temas pagãos em detrimento dos religiosos.",
-        "d) Seguiu rigorosamente os modelos clássicos greco-romanos.",
-        "e) Desenvolveu-se independentemente das influências europeias.",
+        "a) anomeação de um interlocutor.",
+        "b) manifestação de intimidade.",
+        "c) descrição de procedimentos.",
+        "d) utilização de uma linguagem expressiva.",
+        "e) apresentação de ingredientes culinários.",
       ],
-      correctAnswer: 1,
-      exam_type: "Simulado",
-      subject: "Literatura",
+      correctAnswer: 3,
+      exam_type: "ENEM 1º Dia (Azul) 2024",
+      subject: "portugues",
+      level: "médio",
+      textType: "poema",
+      genre: "literario",
+      tags: ["ENEM 1º Dia (Azul) 2024","Linguagem poética", "Interpretação de texto", "Gêneros textuais", "Vinicius de Moraes"],
+      commentedResolution: "Embora o texto apresente elementos de carta e receita, a principal característica que o define como poema é a linguagem expressiva, marcada pelo tom subjetivo, ritmo e metáforas, como se percebe ao longo do texto.",
     },
   ];
 
@@ -196,10 +225,62 @@ De acordo com esse texto, o uso do corretor ortográfico`,
       </View>
 
       {/* Question Header Info */}
-      <View style={styles.questionInfo}>
-        <Text style={styles.examText}>({currentQ.exam_type})</Text>
-        <Text style={styles.subjectText}>{currentQ.subject}</Text>
-      </View>
+      <View style={{ marginBottom: 10 }}>
+        <Text style={{ fontSize: 12, color: "#666" }}>
+        <Text style={styles.subjectText}>({currentQ.exam_type}) • {currentQ.level} • {currentQ.textType} • {currentQ.genre}</Text>
+        </Text>
+        <View style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 4 }}>
+          {currentQ.tags?.map((tag, index) => (
+            <Text
+              key={index}
+              style={{
+                backgroundColor: "#e0e0e0",
+                color: "#333",
+                paddingHorizontal: 8,
+                paddingVertical: 2,
+                borderRadius: 12,
+                fontSize: 10,
+                marginRight: 6,
+                marginBottom: 4,
+              }}
+            >
+              {tag}
+            </Text>
+          ))}
+        </View>
+      </View>      
+      <TouchableOpacity
+        style={{
+          backgroundColor: "#0E1D50",
+          padding: 10,
+          borderRadius: 8,
+          marginTop: 16,
+          alignSelf: "flex-start",
+        }}
+        onPress={() => setShowCommentary(!showCommentary)}
+      >
+        <Text style={{ color: "white", fontWeight: "600" }}>
+          {showCommentary ? "Fechar resolução" : "Resolução comentada"}
+        </Text>
+      </TouchableOpacity>
+
+      {/* Commentary Section */}
+      {showCommentary && (
+        <View
+          style={{
+            marginTop: 10,
+            backgroundColor: "#f1f1f1",
+            padding: 15,
+            borderRadius: 8,
+            borderLeftWidth: 4,
+            borderLeftColor: "#0E1D50",
+          }}
+        >
+          <Text style={{ fontSize: 14, color: "#333" }}>
+            {currentQ.commentedResolution}
+          </Text>
+        </View>
+      )}
 
       {/* Question Text */}
       <View style={styles.questionContainer}>
