@@ -12,17 +12,17 @@ import { router } from "expo-router";
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
-      {/* Topo */}
+      
       <View style={styles.header}>
         <Ionicons name="person-circle-outline" size={28} color="black" />
         <Text style={styles.logo}>Educa<Text style={{ color: "#800000" }}>Quiz</Text></Text>
         <Feather name="settings" size={24} color="black" />
       </View>
 
-      {/* Título */}
+      
       <Text style={styles.titulo}>Matérias</Text>
 
-      {/* Botões das matérias */}
+      
       <View style={styles.grid}>
         <TouchableOpacity style={[styles.materiaBox, { backgroundColor: "#D99A9A" }]}>
           <FontAwesome5 name="globe" size={32} color="black" />
@@ -52,10 +52,10 @@ export default function HomeScreen() {
           <Text style={styles.materiaTexto}>Matemática</Text>
         </TouchableOpacity>
       </View>
-
-      {/* Rodapé */}
+      
+     
       <View style={styles.footer}>
-        <Entypo name="home" size={28} color="black" />
+        
       </View>
     </View>
   );
@@ -64,7 +64,7 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#6B83A2", // Cor de fundo da imagem
+    backgroundColor: "#BFBFBF",
     paddingTop: 50,
     paddingHorizontal: 20,
     justifyContent: "space-between",
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
   titulo: {
     fontSize: 20,
     fontWeight: "bold",
-    color: "#fff",
+    color: "#27283a",
     alignSelf: "center",
     marginTop: 10,
   },
