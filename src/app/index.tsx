@@ -1,28 +1,48 @@
-import { Text, View, Image, TouchableOpacity, StyleSheet } from "react-native";
-import { Link } from "expo-router";
+import React from "react";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  Alert,
+  Linking,
+  Image,
+} from "react-native";
+import { router } from "expo-router";
+import { Button } from "@/components/button";
+import { Input } from "@/components/input";
+//  Test Quiz 
+import { useEffect } from "react";
+
+/* useEffect(() => {
+  router.replace("/quiz");
+}, []); */
 
 export default function Index() {
+  function handleMessage() {
+    router.push("/cadastro");
+  }
+
   return (
-    <View style={style.container}>
-      <Image source={require("../assets/logo.png")} style={style.logo} />
-
-      <Text style={style.nome_projeto}>EducaQuiz</Text>
-
-      <TouchableOpacity style={style.botao}>
-        <Link href={"/cadastro"}>{" "}
-          <Text style={style.botaoTexto}>Cadastrar-se</Text>
-        </Link>
-      </TouchableOpacity>
-
-      <Text style={style.subtitulo}>
-        Já tem uma conta?
-        <Link href={"/login"} style={style.link}>
-          {" "}
-          <Text>Entrar</Text>
-        </Link>
+    <View style={styles.container}>
+      <Image
+        source={require("../../assets/images/logo.png")}
+        style={styles.imagem}
+        resizeMode="contain"
+      />
+      <Text style={styles.nome_projeto}>EducaQuiz</Text>
+      <Text style={styles.titulo}>Bem-vindo</Text>
+      <Button title="Cadastre-se" onPress={handleMessage} />
+      <Text style={styles.subtitulo}>
+        Já tem uma conta?{" "}
+        <Text
+          style={styles.link}
+          onPress={() => router.push("/login")}
+        >
+          Entrar
+        </Text>
       </Text>
-
-      <Text style={style.sinopse}>
+      <Text style={styles.sinopse}>
         O EducaQuiz é um aplicativo interativo para auxiliar estudantes do
         ensino médio na revisão e aprendizado de disciplinas de forma divertida
         e eficaz. Através de quizzes dinâmicos e desafiadores, o aplicativo
@@ -33,39 +53,39 @@ export default function Index() {
   );
 }
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#6B83A2",
+    backgroundColor: "#BFBFBF",
     alignItems: "center",
     justifyContent: "center",
     padding: 20,
     gap: 16,
   },
-  logo: {
+  imagem: {
     width: 200,
     height: 200,
   },
   nome_projeto: {
     fontSize: 20,
     fontWeight: "bold",
-    color: "#000000",
+    color: "#0E1D50",
+  },
+  titulo: {
+    fontSize: 28,
+    fontWeight: "bold",
+    marginBottom: 10,
+  },
+  subtitulo: {
+    fontSize: 16,
+    color: "#555",
+    marginBottom: 30,
   },
   botao: {
     backgroundColor: "#0E1D50",
     paddingVertical: 15,
     paddingHorizontal: 40,
     borderRadius: 8,
-    marginBottom: 30,
-  },
-  botaoTexto: {
-    fontSize: 20,
-    fontWeight: "bold",
-    color: "#ffffff",
-  },
-  subtitulo: {
-    fontSize: 16,
-    color: "#555",
     marginBottom: 30,
   },
   sinopse: {
@@ -78,4 +98,4 @@ const style = StyleSheet.create({
     color: "red",
     textDecorationLine: "none",
   },
-});
+}); 

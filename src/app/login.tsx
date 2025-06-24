@@ -7,9 +7,9 @@ import {
   StyleSheet,
   Alert,
 } from "react-native";
-
-import { Link, router } from "expo-router";
-import { MaterialIcons, Feather } from "@expo/vector-icons";
+import { Feather } from "@expo/vector-icons";
+import { router } from "expo-router";
+import { showAlert } from "../utils/showAlert"
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -18,16 +18,16 @@ export default function Login() {
 
   const handleLogin = () => {
     if (!email || !senha) {
-      Alert.alert("Erro", "Preencha todos os campos.");
+      showAlert("Erro", "Preencha todos os campos.");
       return;
     }
 
     if (senha.length < 12 || senha.length > 16) {
-      Alert.alert("Erro", "A senha deve ter entre 12 e 16 caracteres.");
+      showAlert("Erro", "A senha deve ter entre 12 e 16 caracteres.");
       return;
     }
 
-    Alert.alert("Sucesso", `Login feito com Sucesso!`);
+    showAlert("Sucesso", `Login feito com Sucesso!`);
 
     router.push("/home");
   };
@@ -35,7 +35,7 @@ export default function Login() {
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.item} onPress={() => router.push("/")}>
-        <MaterialIcons name="arrow-back" size={45} color="#0E1D50" />
+        <Feather name="arrow-left" size={24} color="#0E1D50" />
       </TouchableOpacity>
 
       <Text style={styles.titulo}>Login</Text>
@@ -86,7 +86,7 @@ export default function Login() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#6B83A2",
+    backgroundColor: "#BFBFBF",
     alignItems: "center",
     justifyContent: "center",
     padding: 20,

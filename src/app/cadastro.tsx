@@ -7,8 +7,9 @@ import {
   StyleSheet,
   Alert,
 } from "react-native";
-import { MaterialIcons, Feather } from "@expo/vector-icons";
-import { Link, router } from "expo-router";
+import { Feather } from "@expo/vector-icons";
+import { router } from "expo-router";
+import { showAlert } from '../utils/showAlert';
 
 export default function Cadastro() {
   const [nome, setNome] = useState("");
@@ -20,29 +21,29 @@ export default function Cadastro() {
 
   const handleCadastro = () => {
     if (!nome || !email || !senha || !confirmarSenha) {
-      Alert.alert("Erro", "Preencha todos os campos.");
+      showAlert("Erro", "Preencha todos os campos.");
       return;
     }
 
     if (senha.length < 12 || senha.length > 16) {
-      Alert.alert("Erro", "A senha deve ter entre 12 e 16 caracteres.");
+      showAlert("Erro", "A senha deve ter entre 12 e 16 caracteres.");
       return;
     }
     
     if (senha !== confirmarSenha) {
-      Alert.alert("Erro", "As senhas não coincidem.");
+      showAlert("Erro", "As senhas não coincidem.");
       return;
     }
 
-    Alert.alert("Sucesso", `Usuário ${nome} cadastrado com sucesso!`);
+    showAlert("Sucesso", `Usuário ${nome} cadastrado com sucesso!`);
 
-    router.push("/");
+    router.push("/login");
   };
 
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.item} onPress={() => router.push("/")}>
-        <MaterialIcons name="arrow-back" size={45} color="#0E1D50" />
+        <Feather name="arrow-left" size={24} color="#0E1D50" />
       </TouchableOpacity>
 
       <Text style={styles.titulo}>Criar Conta</Text>
@@ -99,8 +100,8 @@ export default function Cadastro() {
         </TouchableOpacity>
       </View>
 
-      <TouchableOpacity style={styles.botao}>
-      <Link href={"/login"}> {" "}<Text style={styles.textoBotao}>Cadastrar</Text></Link>
+      <TouchableOpacity style={styles.botao} onPress={handleCadastro}>
+        <Text style={styles.textoBotao}>Cadastrar</Text>
       </TouchableOpacity>
     </View>
   );
@@ -108,16 +109,16 @@ export default function Cadastro() {
 
 const styles = StyleSheet.create({
   container: {
-    flex:1,
-    backgroundColor: "#6B83A2",
+    flex: 1,
+    backgroundColor: "#BFBFBF",
     alignItems: "center",
     justifyContent: "center",
-    padding: 10,
+    padding: 20,
   },
   titulo: {
     fontSize: 28,
-    padding: 30  ,
     fontWeight: "bold",
+    marginBottom: 30,
     color: "#0E1D50",
   },
   input: {
