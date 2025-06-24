@@ -1,15 +1,24 @@
-📚 EducaQuiz
-EducaQuiz is a high-fidelity educational app prototype designed for content review and practical skill development, optimized for offline use and low-end mobile devices. Built using React Native
+# 📚 EducaQuiz
 
-🚀 Technologies
+EducaQuiz is a high-fidelity educational app prototype designed for content review and practical skill development, optimized for offline use and low-end mobile devices. Built using **React Native**
+
+---
+
+## 🚀 Technologies
+
 This project is built with the following technologies:
 
-React Native - Cross-platform mobile development
-TypeScript (TSX) & JavaScript
-MongoDB or PostgreSQL - For data storage (to be defined)
-Node.js + Express (optional backend if needed)
-Expo - For eaiser development and testing (if used)
-📂 Project Structure
+- **React Native** - Cross-platform mobile development
+- **TypeScript (TSX)** & **JavaScript**
+- **MongoDB** or **PostgreSQL** - For data storage (to be defined)
+- **Node.js + Express** (optional backend if needed)
+- **Expo** - For eaiser development and testing (if used)
+
+---
+
+## 📂 Project Structure
+
+```
 EducaQuiz/
 ├── assets/
 ├── src/
@@ -24,32 +33,59 @@ EducaQuiz/
 └── tsconfig.json
 └── Readme.md
 └── LICENSE
-📱 Features
-📚 Home screen displaying subjects and organized subtopics for easy navigation
-📋 User registration and login
-🧠 Take quizzes on different subjects
-🕹️ Interactive and responsive UI
-💾 Save user progress and results offiline
-🔐 Secure user authentication (if used)
-🛠️ Getting Started
-Prerequisites
-Node.js and npm
-Expo CLI (if using Expo)
-A device or emulator for testing
-installation
+```
+
+---
+
+## 📱 Features
+
+- 📚 Home screen displaying subjects and organized subtopics for easy navigation
+- 📋 User registration and login
+- 🧠 Take quizzes on different subjects
+- 🕹️ Interactive and responsive UI
+- 💾 Save user progress and results offiline
+- 🔐 Secure user authentication (if used)
+
+---
+
+## 🛠️ Getting Started 
+
+### Prerequisites
+
+- Node.js and npm
+- Expo CLI (if using Expo)
+- A device or emulator for testing 
+
+### installation 
+
+```bash
 # Clone the repository 
 git clone https://github.com/Gustahx/EducaQuiz.git
 
 # Navigate into the project folder
 cd EducaQuiz
 
-# Install dependencies 
-npm install 
+## Recommended environment
 
-# Start the deveolpment server
-npx expo start (if needed) or npx react-native run-android or npx react-native run-ios
-🤝 Contributors
-Gustavo - Developer
-Eduardo - Developer
-📝 License
+- Node.js 18.16.0 (use `.nvmrc` with `nvm use`)
+- npm v11.x.x
+- Expo CLI installed globally (optional): `npm install -g expo-cli`
+
+## Quick setup
+
+```bash
+nvm use
+npm install
+npm run start
+```
+
+## 🤝 Contributors
+
+- [Gustavo](https://github.com/Gustahx) - Developer
+- [Eduardo](https://github.com/edwardmaia) - Developer 
+-
+-
+
+## 📝 License
+
 This project is licensed under the MIT License - see the LICENSE file for details.
